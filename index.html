@@ -9,7 +9,7 @@
 <body class="bg-gray-50 min-h-screen p-4 md:p-8 font-sans">
     <div id="app" class="max-w-4xl mx-auto">
         
-        <!-- Tela Inicial (Menu de Simulados) -->
+        <!-- Tela Inicial -->
         <div id="home-screen" class="bg-white p-8 rounded-xl shadow-sm text-center">
             <h1 class="text-3xl font-bold text-blue-900 mb-4">Banco de Questões: Agressão e Defesa</h1>
             <p class="text-gray-600 mb-8">Escolha um simulado abaixo para iniciar. Correção imediata e justificativas completas.</p>
@@ -25,14 +25,14 @@
                 <!-- Cartão Simulado 2 -->
                 <div class="border border-green-200 bg-green-50 p-6 rounded-lg text-left">
                     <h3 class="font-bold text-green-800 text-lg mb-2">Simulado 2: Revisão Geral</h3>
-                    <p class="text-sm text-gray-600 mb-4">12 Questões • Em construção...</p>
+                    <p class="text-sm text-gray-600 mb-4">12 Questões • Pronto para uso</p>
                     <button onclick="startQuiz(2)" class="w-full bg-green-600 text-white px-4 py-2 rounded font-semibold hover:bg-green-700 transition">Iniciar Simulado 2</button>
                 </div>
 
                 <!-- Cartão Simulado 3 -->
                 <div class="border border-purple-200 bg-purple-50 p-6 rounded-lg text-left">
                     <h3 class="font-bold text-purple-800 text-lg mb-2">Simulado 3: Integração</h3>
-                    <p class="text-sm text-gray-600 mb-4">12 Questões • Em construção...</p>
+                    <p class="text-sm text-gray-600 mb-4">12 Questões • Pronto para uso</p>
                     <button onclick="startQuiz(3)" class="w-full bg-purple-600 text-white px-4 py-2 rounded font-semibold hover:bg-purple-700 transition">Iniciar Simulado 3</button>
                 </div>
 
@@ -77,11 +77,9 @@
     </div>
 
     <script>
-        // BANCO DE QUESTÕES COMPLETO
-        // Cada questão agora tem a propriedade 'simulado' indicando a qual prova pertence.
         const allQuestions = [
             // ==========================================
-            // SIMULADO 1 (12 Questões)
+            // SIMULADO 1
             // ==========================================
             {
                 simulado: 1,
@@ -150,7 +148,7 @@
                     { id: 'A', text: "A vasodilatação é causada primariamente por IL-10 e TGF-β, resultando em calor e rubor." },
                     { id: 'B', text: "Ocorre opsonização mediada exclusivamente por linfócitos T CD8+ para facilitar a fagocitose." },
                     { id: 'C', text: "Mediadores vasoativos como histamina e óxido nítrico promovem vasodilatação e aumento da permeabilidade vascular." },
-                    { id: 'D', text: "A fase de resolução da inflamação é mantida pela persistência de altas concentrações de TNF-α." },
+                    { id: 'D', text: "A fase de resolução da inflamação é mantida pela persistência de altas concentrations de TNF-α." },
                     { id: 'E', text: "Neutrófilos chegam ao local infeccioso sem necessidade de quimiocinas ou de adesão ao endotélio." }
                 ],
                 answer: 'C',
@@ -323,8 +321,10 @@
                     E: "Incorreta. Mastócitos liberam histamina na inflamação e alergia."
                 }
             },
+            // A VÍRGULA QUE FALTAVA ESTAVA AQUI!
+            
             // ==========================================
-            // SIMULADO 2 (12 Questões - Revisão Abrangente)
+            // SIMULADO 2
             // ==========================================
             {
                 simulado: 2,
@@ -338,12 +338,12 @@
                 ],
                 answer: 'B',
                 explanation: {
-                    main: "No fagolisossomo, os microrganismos são mortos por Enzimas Lisossómicas, Espécies Reativas de Oxigénio (ROS) geradas pela oxidase do fagócito, e Óxido Nítrico (NO) gerado pela iNOS a partir da L-arginina[cite: 483, 484].",
+                    main: "No fagolisossomo, os microrganismos são mortos por Enzimas Lisossómicas, Espécies Reativas de Oxigénio (ROS) geradas pela oxidase do fagócito, e Óxido Nítrico (NO) gerado pela iNOS a partir da L-arginina.",
                     A: "Incorreta. Envolve fortemente ROS e NO, não apenas enzimas lisossomais.",
-                    B: "Correta. A iNOS converte L-arginina em citrulina e NO, que é altamente tóxico para os microrganismos[cite: 483, 484].",
-                    C: "Incorreta. A oxidase fagocitária converte O2 em ânion superóxido (ROS), não atua sobre o NO[cite: 483].",
-                    D: "Incorreta. Histamina é um mediador vasoativo libertado por mastócitos e basófilos, não é usada no fagolisossomo para destruição bacteriana.",
-                    E: "Incorreta. A fagocitose e a destruição inicial são mecanismos inatos que não requerem linfócitos T[cite: 481, 482]."
+                    B: "Correta. A iNOS converte L-arginina em citrulina e NO, que é altamente tóxico para os microrganismos.",
+                    C: "Incorreta. A oxidase fagocitária converte O2 em ânion superóxido (ROS), não atua sobre o NO.",
+                    D: "Incorreta. Histamina é um mediador vasoativo libertado por mastócitos e basófilos.",
+                    E: "Incorreta. A fagocitose e a destruição inicial são mecanismos inatos que não requerem linfócitos T."
                 }
             },
             {
@@ -358,12 +358,12 @@
                 ],
                 answer: 'B',
                 explanation: {
-                    main: "O consumo específico de C1q, C2 e C4 (sem consumo inicial marcado de C3/C5) é característico da Via Clássica do sistema complemento, que é ativada por imunocomplexos (antígeno-anticorpo) típicos de doenças autoimunes como a artrite reumatoide[cite: 517, 518].",
+                    main: "O consumo específico de C1q, C2 e C4 (sem consumo inicial marcado de C3/C5) é característico da Via Clássica do sistema complemento, que é ativada por imunocomplexos (antígeno-anticorpo) típicos de doenças autoimunes como a artrite reumatoide.",
                     A: "Incorreta. A via alternativa é ativada espontaneamente ou por superfícies microbianas (PAMPs), não consumindo C1, C2 ou C4.",
-                    B: "Correta. Complexos imunes ativam o C1q, iniciando a via clássica[cite: 517, 518].",
+                    B: "Correta. Complexos imunes ativam o C1q, iniciando a via clássica.",
                     C: "Incorreta. A via das lectinas ativa-se pela ligação a açúcares de microrganismos, não por autoanticorpos.",
-                    D: "Incorreta. Artrite reumatoide não é mediada por IgE (alergia), mas sim por IgG/IgM (Fator Reumatoide).",
-                    E: "Incorreta. O enunciado refere níveis normais de C3[cite: 515]."
+                    D: "Incorreta. Artrite reumatoide não é mediada por IgE (alergia), mas sim por IgG/IgM.",
+                    E: "Incorreta. O enunciado refere níveis normais de C3."
                 }
             },
             {
@@ -378,12 +378,12 @@
                 ],
                 answer: 'B',
                 explanation: {
-                    main: "A coloração Gram-negativa aliada ao crescimento em meio MacConkey com halo rosado (mudança de pH) confirma tratar-se de uma enterobactéria fermentadora de lactose (como a E. coli), típica da microbiota intestinal[cite: 516].",
-                    A: "Incorreta. Gram-negativas têm camada fina de peptidoglicano; e o halo rosado prova que *fermenta* lactose[cite: 516].",
-                    B: "Correta. Crescimento no MacConkey + halo rosado = Gram-negativa fermentadora de lactose[cite: 516].",
+                    main: "A coloração Gram-negativa aliada ao crescimento em meio MacConkey com halo rosado (mudança de pH) confirma tratar-se de uma enterobactéria fermentadora de lactose (como a E. coli), típica da microbiota intestinal.",
+                    A: "Incorreta. Gram-negativas têm camada fina de peptidoglicano; e o halo rosado prova que *fermenta* lactose.",
+                    B: "Correta. Crescimento no MacConkey + halo rosado = Gram-negativa fermentadora de lactose.",
                     C: "Incorreta. A coloração de Gram foi negativa.",
                     D: "Incorreta. É uma bactéria verdadeira, sem relação com fungos dimórficos.",
-                    E: "Incorreta. O halo rosado indica apenas a alteração do pH do meio devido à produção de ácidos pela fermentação[cite: 515, 516]."
+                    E: "Incorreta. O halo rosado indica apenas a alteração do pH do meio devido à produção de ácidos pela fermentação."
                 }
             },
             {
@@ -398,10 +398,10 @@
                 ],
                 answer: 'B',
                 explanation: {
-                    main: "Durante a maturação no timo, os linfócitos T que reconhecem antígenos próprios com alta afinidade devem sofrer apoptose. Este processo chama-se deleção clonal (ou seleção negativa). A sua falha liberta células autorreativas[cite: 514, 517].",
-                    A: "Incorreta. Expansão clonal é a proliferação após contacto com antígeno estranho[cite: 517].",
-                    B: "Correta. A deleção clonal elimina linfócitos T que atacariam o próprio organismo[cite: 514, 517].",
-                    C: "Incorreta. Comutação de classe ocorre nos linfócitos B para mudar o tipo de anticorpo (ex: IgM para IgG).",
+                    main: "Durante a maturação no timo, os linfócitos T que reconhecem antígenos próprios com alta afinidade devem sofrer apoptose. Este processo chama-se deleção clonal (ou seleção negativa). A sua falha liberta células autorreativas.",
+                    A: "Incorreta. Expansão clonal é a proliferação após contacto com antígeno estranho.",
+                    B: "Correta. A deleção clonal elimina linfócitos T que atacariam o próprio organismo.",
+                    C: "Incorreta. Comutação de classe ocorre nos linfócitos B para mudar o tipo de anticorpo.",
                     D: "Incorreta. Opsonização é o revestimento de microrganismos por anticorpos ou complemento.",
                     E: "Incorreta. Maturação de afinidade melhora a qualidade dos anticorpos ao longo da infeção."
                 }
@@ -418,12 +418,12 @@
                 ],
                 answer: 'C',
                 explanation: {
-                    main: "A IL-10 e o TGF-beta são as principais citocinas anti-inflamatórias. Após a eliminação do agressor, elas inibem a síntese de mediadores pró-inflamatórios e estimulam a reparação tecidular (fase de resolução)[cite: 510, 511].",
+                    main: "A IL-10 e o TGF-beta são as principais citocinas anti-inflamatórias. Após a eliminação do agressor, elas inibem a síntese de mediadores pró-inflamatórios e estimulam a reparação tecidular (fase de resolução).",
                     A: "Incorreta. IL-1 e TNF-alfa são as principais citocinas *pró*-inflamatórias.",
                     B: "Incorreta. Histamina e bradicinina iniciam a inflamação vascular.",
-                    C: "Correta. IL-10 e TGF-beta sinalizam o fim da inflamação e a reparação[cite: 510, 511].",
-                    D: "Incorreta. IL-8 é uma quimiocina que atrai neutrófilos, alimentando a inflamação[cite: 511].",
-                    E: "Incorreta. IFN-gama e IL-12 ativam macrófagos e direcionam a resposta celular agressiva[cite: 486]."
+                    C: "Correta. IL-10 e TGF-beta sinalizam o fim da inflamação e a reparação.",
+                    D: "Incorreta. IL-8 é uma quimiocina que atrai neutrófilos, alimentando a inflamação.",
+                    E: "Incorreta. IFN-gama e IL-12 ativam macrófagos e direcionam a resposta celular agressiva."
                 }
             },
             {
@@ -438,12 +438,12 @@
                 ],
                 answer: 'C',
                 explanation: {
-                    main: "O baço está dividido em polpa branca (tecido linfoide rico em linfócitos T na PALS e linfócitos B nos folículos) e polpa vermelha (sinusóides e cordões para filtração de hemácias)[cite: 506].",
-                    A: "Incorreta. A polpa vermelha contém essencialmente hemácias e macrófagos; a branca é que tem linfócitos[cite: 506].",
+                    main: "O baço está dividido em polpa branca (tecido linfoide rico em linfócitos T na PALS e linfócitos B nos folículos) e polpa vermelha (sinusóides e cordões para filtração de hemácias).",
+                    A: "Incorreta. A polpa vermelha contém essencialmente hemácias e macrófagos.",
                     B: "Incorreta. O baço filtra o sangue, não a linfa (quem filtra a linfa são os gânglios linfáticos).",
-                    C: "Correta. Descreve exatamente a estrutura da polpa branca esplénica[cite: 506].",
-                    D: "Incorreta. A seleção negativa ocorre na medula do timo[cite: 503].",
-                    E: "Incorreta. A polpa vermelha possui imensos macrófagos para remover células velhas e micróbios do sangue[cite: 506]."
+                    C: "Correta. Descreve exatamente a estrutura da polpa branca esplénica.",
+                    D: "Incorreta. A seleção negativa ocorre na medula do timo.",
+                    E: "Incorreta. A polpa vermelha possui imensos macrófagos."
                 }
             },
             {
@@ -458,12 +458,12 @@
                 ],
                 answer: 'D',
                 explanation: {
-                    main: "A exposição secundária a um antígeno desencadeia a ativação de linfócitos T e B de memória gerados na primeira exposição (ou vacinação). Estes entram em rápida expansão clonal, produzindo uma resposta mais veloz, intensa e com anticorpos de alta afinidade[cite: 513, 517].",
+                    main: "A exposição secundária a um antígeno desencadeia a ativação de linfócitos T e B de memória gerados na primeira exposição (ou vacinação). Estes entram em rápida expansão clonal, produzindo uma resposta mais veloz, intensa e com anticorpos de alta afinidade.",
                     A: "Incorreta. A educação tímica ocorre para linfócitos virgens (naives), não para a resposta secundária periférica.",
                     B: "Incorreta. A via das lectinas é inata e não possui memória.",
                     C: "Incorreta. A rapidez e a produção de IgG dependem da imunidade adaptativa celular (linfócitos), não apenas de macrófagos.",
-                    D: "Correta. A memória imunológica baseia-se na expansão clonal de células previamente selecionadas[cite: 513, 517].",
-                    E: "Incorreta. ADE agrava infeções (ex: Dengue), não é um mecanismo de proteção vacinal[cite: 509, 510]."
+                    D: "Correta. A memória imunológica baseia-se na expansão clonal de células previamente selecionadas.",
+                    E: "Incorreta. ADE agrava infeções (ex: Dengue), não é um mecanismo de proteção vacinal."
                 }
             },
             {
@@ -478,11 +478,11 @@
                 ],
                 answer: 'B',
                 explanation: {
-                    main: "A Transcriptase Reversa é a enzima responsável por transcrever o RNA do HIV em DNA viral. Se bloqueada, o vírus não consegue formar o DNA necessário para prosseguir a infeção[cite: 507, 508].",
+                    main: "A Transcriptase Reversa é a enzima responsável por transcrever o RNA do HIV em DNA viral. Se bloqueada, o vírus não consegue formar o DNA necessário para prosseguir a infeção.",
                     A: "Incorreta. A fixação ocorre por glicoproteínas de superfície (como gp120), antes da ação da transcriptase.",
-                    B: "Correta. Bloqueia o passo 1 (RNA -> DNA) do ciclo viral[cite: 507].",
-                    C: "Incorreta. A integração é feita pela enzima Integrase (passo 2)[cite: 507].",
-                    D: "Incorreta. A montagem e maturação dependem da Protease[cite: 507].",
+                    B: "Correta. Bloqueia o passo 1 (RNA -> DNA) do ciclo viral.",
+                    C: "Incorreta. A integração é feita pela enzima Integrase (passo 2).",
+                    D: "Incorreta. A montagem e maturação dependem da Protease.",
                     E: "Incorreta. O medicamento inibe o vírus, não estimula as funções imunológicas nativas."
                 }
             },
@@ -498,12 +498,12 @@
                 ],
                 answer: 'C',
                 explanation: {
-                    main: "A infeção por S. mansoni ocorre quando a pessoa entra em água doce onde existem caracóis infetados. As larvas cercárias libertadas na água penetram ativamente a pele humana íntegra[cite: 511, 512].",
+                    main: "A infeção por S. mansoni ocorre quando a pessoa entra em água doce onde existem caracóis infetados. As larvas cercárias libertadas na água penetram ativamente a pele humana íntegra.",
                     A: "Incorreta. Refere-se à transmissão de Taenia spp.",
                     B: "Incorreta. Não tem inseto vetor, o hospedeiro intermediário é um molusco de água doce.",
                     C: "Correta. As cercárias são as formas infetantes que penetram a pele.",
-                    D: "Incorreta. Refere-se à via de transmissão do Toxoplasma gondii (oocistos)[cite: 512].",
-                    E: "Incorreta. Ovos não penetram a pele, são excretados nas fezes do hospedeiro; quem penetra é a larva cercária. (Este foi o distrator da questão 11 da prova)[cite: 512]."
+                    D: "Incorreta. Refere-se à via de transmissão do Toxoplasma gondii.",
+                    E: "Incorreta. Ovos não penetram a pele, são excretados nas fezes do hospedeiro; quem penetra é a larva cercária."
                 }
             },
             {
@@ -518,12 +518,12 @@
                 ],
                 answer: 'B',
                 explanation: {
-                    main: "As células NK são sentinelas inatas especializadas em induzir apoptose (morte celular programada) em células que albergam vírus ou sofreram mutação tumoral, atuando de imediato sem necessidade de reconhecimento de antígenos específicos ou MHC[cite: 466, 486].",
-                    A: "Incorreta. NKs não são células fagocíticas (essa função é de neutrófilos/macrófagos).",
-                    B: "Correta. Libertam perforinas e granzimas que destroem a célula infetada alvo[cite: 466, 486].",
+                    main: "As células NK são sentinelas inatas especializadas em induzir apoptose em células que albergam vírus ou sofreram mutação tumoral, atuando de imediato sem necessidade de reconhecimento de antígenos específicos ou MHC.",
+                    A: "Incorreta. NKs não são células fagocíticas.",
+                    B: "Correta. Libertam perforinas e granzimas que destroem a célula infetada alvo.",
                     C: "Incorreta. Produção de anticorpos é função exclusiva de linfócitos B/plasmócitos.",
-                    D: "Incorreta. As células apresentadoras de antígeno profissionais (ex: células dendríticas, macrófagos) desempenham essa função[cite: 466].",
-                    E: "Incorreta. A histamina é libertada por mastócitos e basófilos[cite: 465]."
+                    D: "Incorreta. As células apresentadoras de antígeno profissionais (ex: células dendríticas, macrófagos) desempenham essa função.",
+                    E: "Incorreta. A histamina é libertada por mastócitos e basófilos."
                 }
             },
             {
@@ -538,12 +538,12 @@
                 ],
                 answer: 'C',
                 explanation: {
-                    main: "A Candida spp. faz parte da microbiota residente (em pequenas quantidades). Quando antibióticos eliminam as bactérias benéficas competidoras, os fungos encontram espaço e nutrientes livres, proliferando de forma oportunista[cite: 510, 511].",
+                    main: "A Candida spp. faz parte da microbiota residente (em pequenas quantidades). Quando antibióticos eliminam as bactérias benéficas competidoras, os fungos encontram espaço e nutrientes livres, proliferando de forma oportunista.",
                     A: "Incorreta. O fator desencadeante principal referido no caso é o uso do antibiótico, não os anticorpos maternos.",
                     B: "Incorreta. Antibióticos (antibacterianos) não atuam na quitina dos fungos.",
-                    C: "Correta. A alteração ecológica da microbiota permite o sobrecrescimento fúngico[cite: 510, 511].",
+                    C: "Correta. A alteração ecológica da microbiota permite o sobrecrescimento fúngico.",
                     D: "Incorreta. Antibióticos comuns afetam bactérias, não deprimem as células imunes humanas diretamente.",
-                    E: "Incorreta. O fungo não sofreu mutação, apenas proliferou por ausência de competição[cite: 511]."
+                    E: "Incorreta. O fungo não sofreu mutação, apenas proliferou por ausência de competição."
                 }
             },
             {
@@ -558,12 +558,257 @@
                 ],
                 answer: 'B',
                 explanation: {
-                    main: "Os recetores da imunidade inata (como os Toll-like Receptors - TLRs) reconhecem Padrões Moleculares Associados a Patógenos (PAMPs). São inespecíficos para antígenos individuais, mas altamente eficazes contra estruturas partilhadas por grupos de micróbios. Não sofrem recombinação genética (são codificados na linha germinativa)[cite: 468, 488].",
-                    A: "Incorreta. Alta especificidade e recombinação descrevem recetores T e B (imunidade adaptativa)[cite: 488].",
-                    B: "Correta. Descreve exatamente a natureza dos PRRs (Receptores de Reconhecimento de Padrões)[cite: 468, 488].",
-                    C: "Incorreta. Eles ligam-se diretamente aos micróbios (ex: LPS da parede bacteriana), sem necessidade de MHC[cite: 469].",
-                    D: "Incorreta. O sistema inato carece de memória imunológica clássica[cite: 467, 488].",
-                    E: "Incorreta. O sistema inato discrimina excelentemente o self do nonself, não reagindo contra o hospedeiro saudável[cite: 468]."
+                    main: "Os recetores da imunidade inata (como os Toll-like Receptors - TLRs) reconhecem Padrões Moleculares Associados a Patógenos (PAMPs). São inespecíficos para antígenos individuais, mas altamente eficazes contra estruturas partilhadas por grupos de micróbios. Não sofrem recombinação genética.",
+                    A: "Incorreta. Alta especificidade e recombinação descrevem recetores T e B (imunidade adaptativa).",
+                    B: "Correta. Descreve exatamente a natureza dos PRRs (Receptores de Reconhecimento de Padrões).",
+                    C: "Incorreta. Eles ligam-se diretamente aos micróbios, sem necessidade de MHC.",
+                    D: "Incorreta. O sistema inato carece de memória imunológica clássica.",
+                    E: "Incorreta. O sistema inato discrimina excelentemente o self do nonself, não reagindo contra o hospedeiro saudável."
+                }
+            },
+            // A VÍRGULA ENTRE O SIMULADO 2 E O 3 ESTÁ AQUI:
+
+            // ==========================================
+            // SIMULADO 3
+            // ==========================================
+            {
+                simulado: 3,
+                text: "A resposta imunitária exige uma comunicação eficaz entre o sistema inato e o adaptativo. Qual das seguintes células atua como a principal 'ponte' de ligação entre estes dois sistemas, capturando antígenos nos tecidos e apresentando-os aos linfócitos T nos gânglios linfáticos?",
+                options: [
+                    { id: 'A', text: "Linfócito B" },
+                    { id: 'B', text: "Neutrófilo" },
+                    { id: 'C', text: "Célula Dendrítica" },
+                    { id: 'D', text: "Mastócito" },
+                    { id: 'E', text: "Célula Natural Killer (NK)" }
+                ],
+                answer: 'C',
+                explanation: {
+                    main: "As Células Dendríticas são células apresentadoras de antígenos (APCs) profissionais. Elas capturam microrganismos nos epitélios e tecidos, processam os seus antígenos e migram para os órgãos linfoides secundários para os apresentar aos linfócitos T, ligando a imunidade inata à adaptativa.",
+                    A: "Incorreta. Embora apresentem antígenos, os linfócitos B pertencem primariamente à imunidade adaptativa.",
+                    B: "Incorreta. Neutrófilos são fagócitos rápidos que morrem no local da infeção, não migram para apresentar antígenos.",
+                    C: "Correta. É a principal célula de ligação entre os dois sistemas.",
+                    D: "Incorreta. Mastócitos libertam mediadores inflamatórios (histamina).",
+                    E: "Incorreta. Células NK destroem células infetadas diretamente."
+                }
+            },
+            {
+                simulado: 3,
+                text: "Os epitélios representam a primeira barreira física e química contra agentes agressores. No intestino, além da barreira mecânica, existem mecanismos químicos e celulares de defesa inata. Qual das seguintes opções descreve um mecanismo de defesa química epitelial?",
+                options: [
+                    { id: 'A', text: "Produção de anticorpos IgE pelas células caliciformes." },
+                    { id: 'B', text: "Secreção de peptídeos antimicrobianos (antibióticos naturais), como as defensinas e criptocidinas." },
+                    { id: 'C', text: "Fagocitose direta de bactérias pelas células epiteliais de revestimento." },
+                    { id: 'D', text: "Libertação de histamina pelas junções de oclusão (tight junctions)." },
+                    { id: 'E', text: "Seleção negativa de linfócitos T intraepiteliais." }
+                ],
+                answer: 'B',
+                explanation: {
+                    main: "As barreiras epiteliais produzem localmente antibióticos naturais (peptídeos antimicrobianos), como as defensinas (pele) e criptocidinas (intestino), que ajudam a neutralizar ou esterilizar os microrganismos invasores.",
+                    A: "Incorreta. As células caliciformes produzem muco. A IgE é produzida por plasmócitos.",
+                    B: "Correta. Defensinas e criptocidinas são os peptídeos antimicrobianos dos epitélios.",
+                    C: "Incorreta. As células epiteliais não são fagócitos profissionais.",
+                    D: "Incorreta. A histamina é libertada por mastócitos e basófilos.",
+                    E: "Incorreta. A seleção negativa dos linfócitos T ocorre no timo."
+                }
+            },
+            {
+                simulado: 3,
+                text: "Num doente com APECED (Poliendocrinopatia Autoimune-Candidíase-Distrofia Ectodérmica), ocorre uma mutação no gene AIRE. Histologicamente e imunologicamente, qual é o impacto direto desta falha no Timo?",
+                options: [
+                    { id: 'A', text: "Ausência total da zona cortical tímica, impedindo a entrada de células pró-T." },
+                    { id: 'B', text: "Falha nas células epiteliais tímicas medulares em expressar antígenos tecidos-específicos, resultando numa seleção negativa incompleta e libertação de linfócitos T autorreativos." },
+                    { id: 'C', text: "Destruição dos corpúsculos de Hassall, impedindo a produção de imunoglobulinas." },
+                    { id: 'D', text: "Hipertrofia da medula óssea para compensar a falha tímica na fagocitose." },
+                    { id: 'E', text: "Transformação do timo num órgão linfoide secundário rico em folículos de linfócitos B." }
+                ],
+                answer: 'B',
+                explanation: {
+                    main: "O gene AIRE nas células epiteliais tímicas medulares permite-lhes expressar antígenos de vários tecidos do corpo. Isto serve para testar os linfócitos T. Se o gene AIRE falha, os antígenos próprios não são apresentados, a seleção negativa fica incompleta e linfócitos T autorreativos escapam para a circulação, causando doenças autoimunes.",
+                    A: "Incorreta. O córtex forma-se e os linfócitos entram; o problema é na seleção final na medula.",
+                    B: "Correta. A falha no AIRE compromete a tolerância central.",
+                    C: "Incorreta. O timo não produz imunoglobulinas.",
+                    D: "Incorreta. O timo não realiza fagocitose de limpeza sistémica nem afeta o volume da medula óssea desta forma.",
+                    E: "Incorreta. O timo permanece primário, mas funcionalmente deficiente na tolerância."
+                }
+            },
+            {
+                simulado: 3,
+                text: "O baço é um órgão linfoide secundário com arquitetura histológica dividida em polpa branca e polpa vermelha. Do ponto de vista integrado da resposta a agressões, qual é a principal função da polpa vermelha?",
+                options: [
+                    { id: 'A', text: "Produção de linfócitos T maduros a partir de células estaminais." },
+                    { id: 'B', text: "Apresentação de antígenos capturados na pele através dos vasos linfáticos aferentes." },
+                    { id: 'C', text: "Depuração (limpeza) do sangue, removendo hemácias envelhecidas e microrganismos circulantes através de macrófagos residentes nos cordões esplénicos." },
+                    { id: 'D', text: "Ativação exclusiva da via clássica do sistema complemento." },
+                    { id: 'E', text: "Armazenamento e maturação final de eosinófilos para respostas alérgicas." }
+                ],
+                answer: 'C',
+                explanation: {
+                    main: "A polpa vermelha do baço é constituída por sinusóides repletos de sangue e cordões ricos em macrófagos. A sua função principal é filtrar o sangue sistémico, fagocitando hemácias senescentes e agentes infeciosos circulantes.",
+                    A: "Incorreta. Os linfócitos T amadurecem no timo.",
+                    B: "Incorreta. O baço filtra SANGUE; os gânglios linfáticos é que filtram a linfa proveniente da pele e tecidos.",
+                    C: "Correta. Descreve a função hemocaterética e imunológica da polpa vermelha esplénica.",
+                    D: "Incorreta. O complemento é ativado no plasma sanguíneo e tecidos em geral, não é uma função exclusiva da polpa vermelha.",
+                    E: "Incorreta. Eosinófilos amadurecem na medula óssea."
+                }
+            },
+            {
+                simulado: 3,
+                text: "O ciclo replicativo do HIV compromete gravemente a capacidade de defesa do hospedeiro. Ao utilizar enzimas próprias como a integrase, o vírus afeta diretamente qual tipo celular e compromete qual braço da imunidade?",
+                options: [
+                    { id: 'A', text: "Neutrófilos / Imunidade inata fagocítica." },
+                    { id: 'B', text: "Células endoteliais / Resposta inflamatória vascular." },
+                    { id: 'C', text: "Linfócitos B / Imunidade adaptativa humoral primária." },
+                    { id: 'D', text: "Linfócitos T CD4+ / Imunidade adaptativa (coordenação celular e humoral)." },
+                    { id: 'E', text: "Células epiteliais respiratórias / Barreira mecânica primária." }
+                ],
+                answer: 'D',
+                explanation: {
+                    main: "O HIV tem tropismo (afinidade) principal pelos linfócitos T CD4+ (células T auxiliares ou helper). Estas células são fundamentais para coordenar quase toda a resposta imunitária adaptativa, ativando macrófagos, linfócitos T CD8 e linfócitos B. A sua destruição causa imunodeficiência severa.",
+                    A: "Incorreta. Neutrófilos não são o alvo principal do HIV.",
+                    B: "Incorreta. O endotélio vascular não é destruído primariamente pelo HIV.",
+                    C: "Incorreta. Embora a imunidade humoral seja indiretamente afetada, a infeção direta ocorre nos linfócitos T CD4+.",
+                    D: "Correta. Linfócitos T CD4+ são o alvo, comprometendo a coordenação geral da imunidade.",
+                    E: "Incorreta. Esta é a patogénese típica de vírus respiratórios (ex: Influenza), não do HIV."
+                }
+            },
+            {
+                simulado: 3,
+                text: "Em arboviroses, uma infeção prévia pode modular a resposta imunitária a infeções futuras. Num doente que contrai um novo sorotipo do vírus da Dengue, a presença de anticorpos pré-existentes de baixa eficácia neutralizante contra este novo sorotipo resulta num fenómeno que agrava a doença. Qual é o mecanismo celular subjacente a este agravamento?",
+                options: [
+                    { id: 'A', text: "Os anticorpos destroem os hepatócitos de forma direta e indiscriminada." },
+                    { id: 'B', text: "Os anticorpos fixam-se ao vírus facilitando a sua entrada e replicação no interior dos macrófagos, fenómeno conhecido como Amplificação Dependente de Anticorpos (ADE)." },
+                    { id: 'C', text: "Os anticorpos inibem irreversivelmente a cascata de coagulação, causando as hemorragias." },
+                    { id: 'D', text: "O sistema complemento entra em falência de forma permanente, impedindo qualquer fagocitose." },
+                    { id: 'E', text: "A resposta inata dos neutrófilos é bloqueada pela ação cruzada dos antigénios." }
+                ],
+                answer: 'B',
+                explanation: {
+                    main: "A fisiopatologia da Dengue grave em infeções secundárias por sorotipos diferentes está ligada ao ADE (Antibody-Dependent Enhancement). Os anticorpos antigos ligam-se ao novo vírus, mas em vez de o neutralizarem, agem como 'cavalos de Troia', ligando-se aos recetores Fc dos macrófagos e facilitando a invasão e replicação viral nestas células.",
+                    A: "Incorreta. A destruição tecidular não é mediada pela citotoxicidade direta destes anticorpos.",
+                    B: "Correta. O ADE aumenta a carga viral nos macrófagos e desencadeia inflamação severa.",
+                    C: "Incorreta. As hemorragias resultam de disfunção endotelial e plaquetária severa mediada por citocinas, não por inibição direta da coagulação por anticorpos.",
+                    D: "Incorreta. O complemento não sofre falência, muitas vezes está hiperativado.",
+                    E: "Incorreta. Os neutrófilos não são o eixo central deste fenómeno de exacerbação."
+                }
+            },
+            {
+                simulado: 3,
+                text: "Analisando a ecologia microbiana e a resposta do hospedeiro: Paracoccidioides brasiliensis e Candida spp. relacionam-se de forma diferente com o sistema imunitário humano. Assinale a afirmação que compara corretamente a natureza biológica destes fungos:",
+                options: [
+                    { id: 'A', text: "Ambos são patógenos primários que necessitam de imunossupressão para causar qualquer doença." },
+                    { id: 'B', text: "O P. brasiliensis é um oportunista exclusivo de doentes com HIV, enquanto Candida afeta apenas trabalhadores rurais." },
+                    { id: 'C', text: "O P. brasiliensis é um patógeno primário capaz de infetar indivíduos imunocompetentes expostos ao solo; a Candida é um fungo oportunista da microbiota endógena humana." },
+                    { id: 'D', text: "Ambos são eliminados de forma idêntica pelos antibióticos de amplo espectro utilizados clinicamente." },
+                    { id: 'E', text: "A Candida transmite-se pela picada de insetos, enquanto o Paracoccidioides transmite-se por contacto com a água." }
+                ],
+                answer: 'C',
+                explanation: {
+                    main: "O P. brasiliensis é um patógeno primário dimórfico, capaz de ultrapassar as defesas imunes de indivíduos perfeitamente saudáveis que inalem os seus esporos na natureza. A Candida spp. faz parte da nossa flora (microbiota endógena) e só causa doença quando há um desequilíbrio imunológico, ecológico (ex: uso de antibióticos que matam bactérias competidoras) ou quebra de barreiras.",
+                    A: "Incorreta. Patógenos primários NÃO necessitam de imunossupressão para causar doença.",
+                    B: "Incorreta. A afirmação inverte os conceitos biológicos e epidemiológicos.",
+                    C: "Correta. Distingue perfeitamente o caráter endémico/primário do P. brasiliensis do caráter endógeno/oportunista da Candida.",
+                    D: "Incorreta. Antibióticos atuam em bactérias, não eliminam fungos (e até promovem a candidíase por desequilíbrio).",
+                    E: "Incorreta. Nenhum dos fungos utiliza estas vias de transmissão."
+                }
+            },
+            {
+                simulado: 3,
+                text: "A drenagem linfática é uma ponte anatómica crítica para a resposta imunitária, transportando antígenos e células para os gânglios. Um doente sofreu uma laceração no membro inferior direito com infeção secundária. Anatomicamente, o fluxo linfático proveniente desta região alcançará a circulação venosa através de qual estrutura e em que junção vascular?",
+                options: [
+                    { id: 'A', text: "Ducto linfático direito, desembocando na junção jugulo-subclávia direita." },
+                    { id: 'B', text: "Ducto torácico, desembocando na junção jugulo-subclávia esquerda." },
+                    { id: 'C', text: "Ducto torácico, desembocando diretamente na veia cava inferior." },
+                    { id: 'D', text: "Ducto linfático direito, desembocando na veia cava superior." },
+                    { id: 'E', text: "Cisterna do quilo, que drena diretamente para o átrio direito do coração." }
+                ],
+                answer: 'B',
+                explanation: {
+                    main: "O ducto torácico é responsável por drenar a linfa de ambos os membros inferiores, do abdómen, do hemitórax esquerdo, membro superior esquerdo e metade esquerda da cabeça. Ele desemboca sempre na junção venosa (jugulo-subclávia) do lado esquerdo. O ducto linfático direito drena apenas o quadrante superior direito.",
+                    A: "Incorreta. O ducto direito não drena os membros inferiores.",
+                    B: "Correta. O membro inferior direito drena para a cisterna do quilo, que sobe como ducto torácico e termina na junção esquerda.",
+                    C: "Incorreta. O ducto torácico termina nas veias do pescoço, não na cava inferior.",
+                    D: "Incorreta. O ducto linfático direito não drena a perna.",
+                    E: "Incorreta. A cisterna do quilo não drena para o coração, ela dá origem ao ducto torácico no abdómen."
+                }
+            },
+            {
+                simulado: 3,
+                text: "A infeção por Schistosoma mansoni pode evoluir de forma crónica. O fígado é frequentemente afetado devido aos ovos do parasita que ficam retidos nos sinusóides hepáticos. Qual é a estrutura histológica/imunológica formada pelo hospedeiro numa tentativa de conter estes ovos, originando posteriormente fibrose?",
+                options: [
+                    { id: 'A', text: "Folículo linfoide primário com centro germinativo." },
+                    { id: 'B', text: "Corpúsculo de Hassall." },
+                    { id: 'C', text: "Granuloma, caracterizado pela agregação de macrófagos ativados e linfócitos T." },
+                    { id: 'D', text: "Placa de Peyer." },
+                    { id: 'E', text: "Biofilme extracelular neutrofílico." }
+                ],
+                answer: 'C',
+                explanation: {
+                    main: "Na Esquistossomose crónica, o sistema imunitário celular (Linfócitos T e Macrófagos) reage fortemente aos antígenos libertados pelos ovos retidos nos tecidos (como o fígado), formando granulomas ao seu redor para os conter. A cicatrização contínua destas lesões granulomatosas gera a fibrose hepática típica da doença.",
+                    A: "Incorreta. Folículos linfoides não se formam no parênquima hepático para conter parasitas.",
+                    B: "Incorreta. Corpúsculos de Hassall são exclusivos do timo.",
+                    C: "Correta. A inflamação crónica granulomatosa é a marca histopatológica da resposta aos ovos de Schistosoma.",
+                    D: "Incorreta. As Placas de Peyer são agregados linfoides normais no íleo intestinal.",
+                    E: "Incorreta. Biofilmes são produzidos por bactérias, não pelo sistema imunitário do hospedeiro."
+                }
+            },
+            {
+                simulado: 3,
+                text: "A correlação entre achados serológicos e a história clínica é essencial. Uma gestante apresenta IgG e IgM positivos para Toxoplasma gondii. O teste de avidez de IgG indica 'alta avidez'. Como se integra e justifica este resultado imunológico no contexto do risco fetal?",
+                options: [
+                    { id: 'A', text: "A alta avidez indica uma infeção antiga (antes da gravidez); a IgM pode ser residual, existindo imunidade protetora e baixo risco de transmissão fetal." },
+                    { id: 'B', text: "A alta avidez indica uma infeção aguda, adquirida nos últimos dias, com risco extremo de transmissão transplacentária imediata." },
+                    { id: 'C', text: "A alta avidez reflete a incapacidade dos linfócitos B em realizarem a comutação de classe isotípica." },
+                    { id: 'D', text: "Significa que o parasita se multiplicou no líquido amniótico devido à quebra de imunidade tecidular." },
+                    { id: 'E', text: "Representa um falso positivo, devendo o diagnóstico focar-se exclusivamente na contagem de eosinófilos no sangue." }
+                ],
+                answer: 'A',
+                explanation: {
+                    main: "A maturação da afinidade (avidez) dos anticorpos IgG requer tempo após a infeção primária. Se os anticorpos apresentam 'alta avidez', isso significa que a infeção já ocorreu há meses ou anos (infeção antiga). A presença concomitante de IgM pode ser um falso positivo ou IgM residual de longa duração. Numa infeção antiga materna, o risco de transmissão ao feto é muito baixo.",
+                    A: "Correta. Alta avidez num teste IgG tranquiliza o obstetra quanto a infeção recente.",
+                    B: "Incorreta. Infeções agudas (recentes) caracterizam-se por IgG de BAIXA avidez.",
+                    C: "Incorreta. A alta avidez demonstra precisamente a eficácia e maturidade da resposta imune adaptativa.",
+                    D: "Incorreta. Não existe evidência biológica que sustente esta afirmação com base no teste sérico.",
+                    E: "Incorreta. Eosinófilos isolados não servem para diagnóstico definitivo de infeção por Toxoplasma."
+                }
+            },
+            {
+                simulado: 3,
+                text: "As vias do sistema complemento ativam-se de modos distintos. Na Artrite Reumatoide, a deposição de imunocomplexos articulares despoleta inflamação através de qual mecanismo de ativação proteolítica inicial?",
+                options: [
+                    { id: 'A', text: "Ligação da proteína C3b diretamente à membrana sinovial." },
+                    { id: 'B', text: "Ativação exclusiva do fator B e fator D mediada pelas endotoxinas locais." },
+                    { id: 'C', text: "Ligação do complexo C1 (C1q, C1r, C1s) às regiões Fc dos anticorpos (IgG/IgM) que formam o imunocomplexo." },
+                    { id: 'D', text: "Produção de MBL (Lectina de Ligação à Manose) pelos fibroblastos da articulação inflamada." },
+                    { id: 'E', text: "Dissolução espontânea da proteína C5, formando C5a sem intervenção de convertases prévias." }
+                ],
+                answer: 'C',
+                explanation: {
+                    main: "A Artrite Reumatoide caracteriza-se por inflamação mediada pela formação de imunocomplexos (antígenos ligados a autoanticorpos). Estes imunocomplexos ativam o sistema complemento pela Via Clássica, cujo primeiro passo é a ligação do componente C1 (subunidade C1q) à região Fc do anticorpo no complexo.",
+                    A: "Incorreta. C3b liga-se de forma amplificada na via alternativa ou a meio da cascata, não é o gatilho inicial dos imunocomplexos.",
+                    B: "Incorreta. O fator B e D pertencem à via alternativa, que não depende de anticorpos.",
+                    C: "Correta. É o passo inicial que desencadeia a Via Clássica do complemento.",
+                    D: "Incorreta. A MBL pertence à via das lectinas e ativa-se pela ligação a açúcares de micróbios, não por anticorpos.",
+                    E: "Incorreta. C5 só é clivada após a formação enzimática da C5-convertase."
+                }
+            },
+            {
+                simulado: 3,
+                text: "A análise microbiológica utiliza meios específicos para diferenciar populações bacterianas. Ao semear amostras em Agar MacConkey e verificar crescimento bacteriano associado à ausência de alteração da cor do meio (colónias incolores, sem halo rosado), o laboratório clínico infere que a bactéria em causa apresenta qual perfil celular e metabólico?",
+                options: [
+                    { id: 'A', text: "É uma bactéria Gram-negativa, não fermentadora de lactose." },
+                    { id: 'B', text: "É uma bactéria Gram-positiva, fermentadora de lactose." },
+                    { id: 'C', text: "É uma bactéria Gram-negativa, fortemente fermentadora de lactose." },
+                    { id: 'D', text: "É um bacilo álcool-ácido resistente, semelhante ao da Tuberculose." },
+                    { id: 'E', text: "É uma estirpe fúngica capaz de sobreviver em ambiente ácido extremo." }
+                ],
+                answer: 'A',
+                explanation: {
+                    main: "O Agar MacConkey é um meio seletivo e diferencial. É seletivo porque apenas permite o crescimento de bactérias Gram-negativas (inibe Gram-positivas). É diferencial porque avalia a fermentação da lactose: se a bactéria fermentar, produz ácido e a colónia fica rosada; se não fermentar, a colónia cresce mas permanece incolor.",
+                    A: "Correta. Cresceu = Gram-negativa. Incolor = Não fermenta lactose.",
+                    B: "Incorreta. Bactérias Gram-positivas não crescem neste meio.",
+                    C: "Incorreta. Se fosse fermentadora, as colónias e o halo seriam rosados.",
+                    D: "Incorreta. O MacConkey não é usado para micobactérias, que requerem meios específicos (ex: Löwenstein-Jensen).",
+                    E: "Incorreta. Trata-se de identificação de bacilos entéricos, não de fungos."
                 }
             }
         ];
@@ -575,7 +820,6 @@
         let answered = false;
 
         function startQuiz(simuladoNum) {
-            // Filtra as questões do banco pelo número do simulado escolhido
             activeQuestions = allQuestions.filter(q => q.simulado === simuladoNum);
             
             if (activeQuestions.length === 0) {
