@@ -808,8 +808,251 @@
                     D: "Incorreta. O MacConkey não é usado para micobactérias, que requerem meios específicos (ex: Löwenstein-Jensen).",
                     E: "Incorreta. Trata-se de identificação de bacilos entéricos, não de fungos."
                 }
+            },
+    
+            // ==========================================
+            // SIMULADO 4: CASOS CLÍNICOS
+            // ==========================================
+            {
+                simulado: 4,
+                text: "Caso Clínico 1: Paciente feminina, 25 anos, apresenta eritema malar (mancha em borboleta no rosto), dores articulares e proteinúria. Exames revelam anticorpos anti-DNA dupla hélice (anti-dsDNA) em altos títulos. O dano renal (nefrite lúpica) nesta paciente é causado principalmente por qual mecanismo imunológico?",
+                options: [
+                    { id: 'A', text: "Hipersensibilidade do Tipo I, mediada por IgE e mastócitos." },
+                    { id: 'B', text: "Hipersensibilidade do Tipo II, com anticorpos atacando diretamente os podócitos renais." },
+                    { id: 'C', text: "Hipersensibilidade do Tipo III, com deposição de imunocomplexos circulantes nos glomérulos e ativação do complemento." },
+                    { id: 'D', text: "Hipersensibilidade do Tipo IV, mediada por linfócitos T CD8+ citotóxicos." },
+                    { id: 'E', text: "Imunodeficiência primária de linfócitos B." }
+                ],
+                answer: 'C',
+                explanation: {
+                    main: "O Lúpus Eritematoso Sistêmico (LES) é o exemplo clássico de doença de imunocomplexos (Hipersensibilidade Tipo III). Anticorpos ligam-se a antígenos solúveis (como o DNA) no sangue, e esses complexos depositam-se nos vasos e glomérulos, ativando o complemento e causando intensa inflamação.",
+                    A: "Incorreta. Hipersensibilidade Tipo I é alérgica/anafilática.",
+                    B: "Incorreta. Na Tipo II os anticorpos ligam-se a antígenos fixos na célula alvo (ex: Doença de Goodpasture), e não a antígenos circulantes.",
+                    C: "Correta. Deposição de complexos antígeno-anticorpo caracteriza o Tipo III.",
+                    D: "Incorreta. A Tipo IV é mediada por células (ex: dermatite de contato), não por imunocomplexos.",
+                    E: "Incorreta. Ocorre exatamente o oposto: hiperatividade dos linfócitos B produzindo autoanticorpos."
+                }
+            },
+            {
+                simulado: 4,
+                text: "Caso Clínico 2: Um menino de 8 anos é picado por uma abelha. Em poucos minutos, desenvolve edema de glote, urticária generalizada, dificuldade respiratória e hipotensão. O quadro clínico descreve um choque anafilático. Qual mediador pré-formado e qual célula são os principais responsáveis pela resposta imediata?",
+                options: [
+                    { id: 'A', text: "Interleucina-10 / Macrófagos" },
+                    { id: 'B', text: "Histamina / Mastócitos" },
+                    { id: 'C', text: "Óxido Nítrico / Neutrófilos" },
+                    { id: 'D', text: "Anticorpos IgG / Plasmócitos" },
+                    { id: 'E', text: "Perforina / Células NK" }
+                ],
+                answer: 'B',
+                explanation: {
+                    main: "A anafilaxia é uma reação de Hipersensibilidade Tipo I, desencadeada pela ligação do alérgeno (veneno da abelha) à IgE fixada na superfície dos mastócitos. Isso causa a degranulação imediata e liberação massiva de histamina, resultando em vasodilatação e broncoconstrição.",
+                    A: "Incorreta. IL-10 é anti-inflamatória.",
+                    B: "Correta. Histamina é o mediador vasoativo primário liberado pelos mastócitos na anafilaxia.",
+                    C: "Incorreta. Neutrófilos atuam em inflamações bacterianas agudas.",
+                    D: "Incorreta. A anafilaxia depende da IgE, não da IgG.",
+                    E: "Incorreta. Perforinas são usadas por células NK e T CD8 para matar células infectadas."
+                }
+            },
+            {
+                simulado: 4,
+                text: "Caso Clínico 3: Paciente de 45 anos, tabagista, apresenta tosse crônica, febre vespertina, sudorese noturna e perda de peso. A radiografia de tórax mostra cavitação no ápice pulmonar. O exame de escarro revela bacilos álcool-ácido resistentes (BAAR). Na tentativa de conter a infecção, o sistema imune forma qual lesão histológica típica?",
+                options: [
+                    { id: 'A', text: "Microabcesso purulento rico em neutrófilos." },
+                    { id: 'B', text: "Placa de ateroma calcificada." },
+                    { id: 'C', text: "Granuloma caseiro, composto por macrófagos epitelióides e linfócitos T." },
+                    { id: 'D', text: "Folículo linfoide primário ectópico." },
+                    { id: 'E', text: "Infiltrado eosinofílico difuso." }
+                ],
+                answer: 'C',
+                explanation: {
+                    main: "A Tuberculose (causada pelo Mycobacterium tuberculosis) provoca uma reação de Hipersensibilidade Tipo IV (mediada por células). Como os macrófagos não conseguem destruir o bacilo facilmente, os linfócitos T CD4+ ativam-nos para se transformarem em células epitelióides, formando um granuloma com necrose caseosa central para 'isolar' a infecção.",
+                    A: "Incorreta. Neutrófilos formam abcessos em infecções piogênicas (ex: Staphylococcus), não na tuberculose.",
+                    B: "Incorreta. Placas de ateroma são depósitos de colesterol nos vasos.",
+                    C: "Correta. O granuloma caseoso é a marca da resposta imunológica à tuberculose.",
+                    D: "Incorreta. Folículos são estruturas de linfócitos B para produção de anticorpos.",
+                    E: "Incorreta. Eosinófilos atuam em alergias e parasitoses (helmintos)."
+                }
+            },
+            {
+                simulado: 4,
+                text: "Caso Clínico 4: Jovem de 30 anos dá entrada na emergência com dispneia progressiva e candidíase oral severa. O teste rápido para HIV é positivo. A contagem de linfócitos T CD4+ é de 150 células/mm³. Por que a queda de CD4 torna o paciente suscetível a fungos oportunistas?",
+                options: [
+                    { id: 'A', text: "Ocorre redução na produção de histamina pelos mastócitos." },
+                    { id: 'B', text: "O CD4 é a única célula capaz de fagocitar fungos." },
+                    { id: 'C', text: "Sem os linfócitos T CD4+, há uma falha na produção de citocinas (como o IFN-gama) necessárias para ativar os macrófagos e coordenar a resposta imune celular." },
+                    { id: 'D', text: "O vírus do HIV destrói diretamente a parede celular das leveduras, espalhando-as pelo sangue." },
+                    { id: 'E', text: "O sistema complemento é inibido irrevesivelmente pelo vírus." }
+                ],
+                answer: 'C',
+                explanation: {
+                    main: "Os linfócitos T CD4+ são os 'maestros' do sistema imune. Eles secretam citocinas (especialmente IFN-gama, na resposta Th1) que ativam o poder destrutivo dos macrófagos. Sem o CD4, os macrófagos ficam ineficientes contra fungos e parasitas intracelulares.",
+                    A: "Incorreta. Mastócitos e histamina não protegem contra infecções fúngicas.",
+                    B: "Incorreta. T CD4+ não faz fagocitose (quem faz é o macrófago/neutrófilo).",
+                    C: "Correta. A deficiência na ativação macrofágica via T CD4+ explica as infecções oportunistas.",
+                    D: "Incorreta. O HIV infecta células imunes humanas, não tem ação sobre fungos.",
+                    E: "Incorreta. O sistema complemento inato continua funcional, mas sem a imunidade celular, é insuficiente."
+                }
+            },
+            {
+                simulado: 4,
+                text: "Caso Clínico 5: Um menino de 10 anos teve uma faringite estreptocócica não tratada. Semanas depois, desenvolve sopro cardíaco e dores nas articulações, sendo diagnosticado com Febre Reumática. O mecanismo que levou à agressão das válvulas cardíacas é explicado por:",
+                options: [
+                    { id: 'A', text: "Fagocitose direta das válvulas cardíacas pela bactéria estreptocócica." },
+                    { id: 'B', text: "Mimetismo molecular: anticorpos produzidos contra a proteína M da bactéria reagem cruzado com antígenos normais do tecido cardíaco." },
+                    { id: 'C', text: "Deposição de imunocomplexos circulantes do Tipo III de forma sistêmica." },
+                    { id: 'D', text: "Alergia imediata aos antibióticos usados tardiamente no tratamento." },
+                    { id: 'E', text: "Imunodeficiência primária do timo." }
+                ],
+                answer: 'B',
+                explanation: {
+                    main: "A Febre Reumática é um exemplo clássico de mimetismo molecular e Hipersensibilidade do Tipo II. Os anticorpos (e células T) criados para combater a proteína M do Streptococcus pyogenes acabam reconhecendo estruturas muito semelhantes (homologia) presentes no coração, articulações e sistema nervoso do próprio paciente.",
+                    A: "Incorreta. Bactérias não fagocitam; e a lesão é estéril (imunológica), não por invasão direta do coração.",
+                    B: "Correta. A reação cruzada (mimetismo) explica a agressão autoimune secundária.",
+                    C: "Incorreta. A febre reumática é predominantemente mediada por anticorpos atacando tecidos fixos (Tipo II) e células T, não imunocomplexos livres.",
+                    D: "Incorreta. O quadro não é uma reação alérgica a drogas.",
+                    E: "Incorreta. A resposta ocorreu pela eficácia da resposta adaptativa, porém com falha de tolerância periférica por mimetismo."
+                }
+            },
+            {
+                simulado: 4,
+                text: "Caso Clínico 6: Durante a fase inicial de uma infecção pelo vírus Influenza, as células epiteliais respiratórias do paciente infectado secretam rapidamente Interferon do Tipo I (IFN-alfa e IFN-beta). Qual é a principal função destas citocinas inatas?",
+                options: [
+                    { id: 'A', text: "Causar apoptose em todas as células saudáveis do pulmão." },
+                    { id: 'B', text: "Ativar exclusivamente os linfócitos B para produzirem IgE imediata." },
+                    { id: 'C', text: "Induzir um 'estado antiviral' nas células vizinhas não infectadas, inibindo a replicação viral, e aumentar a citotoxicidade das células NK." },
+                    { id: 'D', text: "Opsonizar os vírus circulantes para facilitar a fagocitose pelos neutrófilos." },
+                    { id: 'E', text: "Destruir a cápside viral diretamente por lise enzimática no ambiente extracelular." }
+                ],
+                answer: 'C',
+                explanation: {
+                    main: "Os Interferons do Tipo I (alfa e beta) são essenciais na defesa inata contra vírus. Células infectadas produzem essas citocinas para avisar as células vizinhas, que bloqueiam a síntese de proteínas (impedindo a replicação de novos vírus). Além disso, ativam fortemente as células NK.",
+                    A: "Incorreta. Eles protegem as células saudáveis, não causam apoptose generalizada.",
+                    B: "Incorreta. Linfócitos B requerem ativação de citocinas adaptativas (como IL-4 para IgE).",
+                    C: "Correta. Indução do estado antiviral e ativação de NK são as funções primordiais dos IFN Tipo I.",
+                    D: "Incorreta. Quem opsoniza são anticorpos e proteínas do complemento.",
+                    E: "Incorreta. Citocinas são moléculas sinalizadoras, não enzimas líticas diretas."
+                }
+            },
+            {
+                simulado: 4,
+                text: "Caso Clínico 7: Agricultor de 50 anos pisou num prego enferrujado. Dias depois, apresentou espasmos musculares severos (opistótono) e trismo (dificuldade de abrir a boca), sendo diagnosticado com Tétano. A fisiopatologia da doença está relacionada a:",
+                options: [
+                    { id: 'A', text: "Bactérias invadindo e destruindo as fibras musculares através da formação de biofilmes." },
+                    { id: 'B', text: "Produção de uma toxina que se liga aos macrófagos, induzindo choque séptico." },
+                    { id: 'C', text: "Ação da tetanospasmina, uma exotoxina bacteriana que bloqueia a liberação de neurotransmissores inibitórios (GABA e Glicina) no sistema nervoso central." },
+                    { id: 'D', text: "Hiperativação dos mastócitos mediada pela imunidade celular." },
+                    { id: 'E', text: "Destruição da bainha de mielina por autoanticorpos (mimetismo molecular)." }
+                ],
+                answer: 'C',
+                explanation: {
+                    main: "O tétano é uma toxemia. O Clostridium tetani no ferimento produz a exotoxina tetanospasmina, que viaja até a medula espinhal e inibe a liberação de GABA e glicina (neurotransmissores que promovem o relaxamento muscular). Sem inibição, ocorre contração muscular sustentada e espasmos.",
+                    A: "Incorreta. A bactéria fica no ferimento local; a toxina é que viaja pelo corpo.",
+                    B: "Incorreta. O tétano causa quadro neurológico (espasmos), não choque séptico sistêmico clássico.",
+                    C: "Correta. O bloqueio neurológico inibitório explica perfeitamente a contração espástica.",
+                    D: "Incorreta. Mastócitos não estão envolvidos na patogênese do tétano.",
+                    E: "Incorreta. Tétano não é doença autoimune (Síndrome de Guillain-Barré destrói mielina)."
+                }
+            },
+            {
+                simulado: 4,
+                text: "Caso Clínico 8: Um paciente internado na UTI com pneumonia grave por bactéria Gram-negativa evolui para choque séptico, com febre alta, coagulação intravascular disseminada (CIVD) e hipotensão refratária. Qual componente bacteriano atua como PAMP e se liga ao receptor TLR-4 dos macrófagos para causar esta tempestade de citocinas?",
+                options: [
+                    { id: 'A', text: "Ácido teicóico." },
+                    { id: 'B', text: "Lipopolissacarídeo (LPS)." },
+                    { id: 'C', text: "Ergosterol da membrana." },
+                    { id: 'D', text: "Glicoproteína gp120." },
+                    { id: 'E', text: "Proteína M." }
+                ],
+                answer: 'B',
+                explanation: {
+                    main: "O Lipopolissacarídeo (LPS) é a endotoxina clássica presente na parede celular de bactérias Gram-negativas. Quando liberado no sangue, o LPS liga-se aos receptores TLR-4 nos macrófagos, provocando uma liberação explosiva e descontrolada de citocinas inflamatórias (TNF-alfa, IL-1), levando ao choque endotóxico.",
+                    A: "Incorreta. Ácido teicóico é típico de Gram-positivas.",
+                    B: "Correta. LPS é o PAMP reconhecido pelo TLR-4, essencial no choque por Gram-negativas.",
+                    C: "Incorreta. Ergosterol é componente da membrana de fungos.",
+                    D: "Incorreta. A gp120 é uma proteína do envelope do vírus HIV.",
+                    E: "Incorreta. Proteína M é o fator de virulência do Streptococcus pyogenes (Gram-positiva)."
+                }
+            },
+            {
+                simulado: 4,
+                text: "Caso Clínico 9: Mulher Rh-negativo teve um primeiro filho Rh-positivo sem complicações. Na segunda gestação (também feto Rh-positivo), o recém-nascido desenvolve icterícia severa e anemia profunda (Doença Hemolítica do Recém-Nascido). Qual classe de anticorpos maternos foi responsável por atravessar a placenta e destruir as hemácias fetais?",
+                options: [
+                    { id: 'A', text: "IgM, devido à sua estrutura pentamérica." },
+                    { id: 'B', text: "IgE, através do receptor de mastócitos placentários." },
+                    { id: 'C', text: "IgG, pois é o único isótipo capaz de atravessar a barreira placentária via receptores Fc neonatais (FcRn)." },
+                    { id: 'D', text: "IgA secretora, presente no líquido amniótico." },
+                    { id: 'E', text: "IgD, por ativação direta dos linfócitos fetais." }
+                ],
+                answer: 'C',
+                explanation: {
+                    main: "A Doença Hemolítica do Recém-Nascido ocorre quando anticorpos maternos contra o fator Rh atravessam a placenta e atacam as hemácias do feto (Hipersensibilidade Tipo II). O único anticorpo capaz de cruzar a placenta humana é a IgG.",
+                    A: "Incorreta. A IgM é a primeira produzida, mas é muito grande (pentamérica) e não cruza a placenta.",
+                    B: "Incorreta. IgE medeia alergias e antiparasitários.",
+                    C: "Correta. A IgG cruza a placenta e fornece imunidade passiva ao feto, mas neste caso atua patologicamente destruindo suas células.",
+                    D: "Incorreta. A IgA é passada predominantemente pelo colostro/leite materno.",
+                    E: "Incorreta. IgD funciona como receptor de membrana em linfócitos B virgens."
+                }
+            },
+            {
+                simulado: 4,
+                text: "Caso Clínico 10: Paciente de 12 anos dá entrada na emergência com crise de asma alérgica aguda (sibilos bilaterais e falta de ar). Exames mostram aumento crônico das citocinas IL-4 e IL-5 no pulmão. Qual a função respectiva dessas citocinas na patogênese da doença?",
+                options: [
+                    { id: 'A', text: "IL-4 inibe os macrófagos; IL-5 induz a febre central." },
+                    { id: 'B', text: "IL-4 promove a comutação de classe (switch) para IgE; IL-5 ativa e atrai eosinófilos para o pulmão." },
+                    { id: 'C', text: "Ambas ativam exclusivamente os linfócitos T CD8 citotóxicos para destruir o alérgeno." },
+                    { id: 'D', text: "IL-4 degrada a histamina extracelular; IL-5 inibe a contração muscular brônquica." },
+                    { id: 'E', text: "IL-4 induz tolerância imunológica; IL-5 recruta neutrófilos piogênicos." }
+                ],
+                answer: 'B',
+                explanation: {
+                    main: "Na asma atópica (Hipersensibilidade Tipo I), a resposta é coordenada por linfócitos Th2. O Th2 produz IL-4, que obriga os linfócitos B a produzirem os anticorpos alérgicos (IgE), e produz IL-5, que é o principal fator de ativação e recrutamento dos eosinófilos, células essenciais na inflamação crônica pulmonar.",
+                    A: "Incorreta. IL-1 inibe macrófago; febre é mediada por IL-1, IL-6 e TNF.",
+                    B: "Correta. Descreve perfeitamente o eixo Th2 da imunidade alérgica.",
+                    C: "Incorreta. Citocinas Th2 inibem a resposta T CD8 (que é mediada por Th1/IFN-y).",
+                    D: "Incorreta. Não possuem ação direta de degradação enzimática ou inibição muscular.",
+                    E: "Incorreta. Neutrófilos são atraídos pela IL-8, não IL-5."
+                }
+            },
+            {
+                simulado: 4,
+                text: "Caso Clínico 11: Viajante de volta da África subsaariana apresenta picos febris altos a cada 48 horas (febre terçã), seguidos de calafrios severos, sudorese e anemia. O diagnóstico de Malária é confirmado por esfregaço de sangue. A ciclicidade dos sintomas clínicos ocorre devido a qual evento patológico?",
+                options: [
+                    { id: 'A', text: "Liberação de ovos do parasita no lúmen intestinal." },
+                    { id: 'B', text: "Multiplicação sincrônica e ruptura massiva das hemácias, liberando os merozoítos e produtos tóxicos no sangue simultaneamente." },
+                    { id: 'C', text: "Ciclo de maturação do vírus dentro dos linfonodos periféricos." },
+                    { id: 'D', text: "Reações alérgicas tipo I que ocorrem apenas no período noturno." },
+                    { id: 'E', text: "Ruptura contínua de granulomas hepáticos formados por macrófagos inativos." }
+                ],
+                answer: 'B',
+                explanation: {
+                    main: "A malária é causada pelo protozoário Plasmodium. O seu ciclo de vida no sangue envolve a entrada na hemácia, multiplicação assexuada e subsequente lise da célula para infectar novas hemácias. Esse processo ocorre de forma sincrônica em toda a população parasitária; a destruição simultânea das hemácias e liberação de resíduos tóxicos (como a hemozoína) ativa os macrófagos a liberarem TNF-alfa, causando o pico febril.",
+                    A: "Incorreta. A malária não é transmitida por ovos intestinais (é um parasita sanguíneo transmitido pelo mosquito Anopheles).",
+                    B: "Correta. A lise eritrocitária sincronizada justifica os ciclos clássicos de febre intermitente.",
+                    C: "Incorreta. Plasmodium não é vírus e não se replica primariamente em linfonodos.",
+                    D: "Incorreta. Não há mecanismo de alergia (IgE) regulando o ciclo do parasita.",
+                    E: "Incorreta. Granulomas são típicos de tuberculose ou esquistossomose, não geram este padrão na malária."
+                }
+            },
+            {
+                simulado: 4,
+                text: "Caso Clínico 12: Trabalhador da construção civil desenvolve lesões pruriginosas, descamativas e vesiculares nas mãos exatas áreas onde tem contato diário com o cimento (que contém sais de cromo e cobalto). A biópsia revela intenso infiltrado de linfócitos T na derme. Este caso de dermatite de contato representa qual tipo de reação imune?",
+                options: [
+                    { id: 'A', text: "Hipersensibilidade Tipo I imediata, pois a pele é rica em mastócitos." },
+                    { id: 'B', text: "Reação inata estéril sem memória imunológica." },
+                    { id: 'C', text: "Hipersensibilidade Tipo III, por deposição de complexos imunes na epiderme." },
+                    { id: 'D', text: "Hipersensibilidade Tipo IV tardia, mediada por linfócitos T sensibilizados aos produtos químicos haptenos." },
+                    { id: 'E', text: "Falha dos neutrófilos em fagocitar as partículas de cimento." }
+                ],
+                answer: 'D',
+                explanation: {
+                    main: "A dermatite de contato (ex: alergia a bijuterias, níquel, cimento, plantas) é o melhor exemplo clínico de Hipersensibilidade do Tipo IV. Pequenos compostos químicos agem como haptenos, ligam-se às proteínas da pele, são apresentados por células de Langerhans e ativam linfócitos T (CD4+ Th1 e CD8+). Ao novo contato, essas células T migram para a pele gerando inflamação tardia (48 a 72 horas depois).",
+                    A: "Incorreta. A dermatite de contato é lenta (dias), não imediata (minutos) como a Tipo I.",
+                    B: "Incorreta. Há memória imunológica intensa (toda vez que encosta, inflama mais rápido).",
+                    C: "Incorreta. O tipo III envolve vasculites sistêmicas, não dermatite de contato localizada.",
+                    D: "Correta. Linfócitos T sensibilizados são a base da hipersensibilidade do tipo tardio.",
+                    E: "Incorreta. Neutrófilos não estão primariamente envolvidos na patogênese desta dermatite alergênica."
+                }
             }
-        ];
         
         // Lógica da Aplicação
         let activeQuestions = [];
