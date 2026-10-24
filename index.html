@@ -324,150 +324,250 @@
                 }
             }
             // ==========================================
-            // ESPAÇO PARA OS PRÓXIMOS SIMULADOS
-            // (Cole as questões dos Simulados 2, 3, 4 e 5 aqui debaixo, seguindo o padrão!)
-            // ==========================================
-        ]
-// ==========================================
-            // SIMULADO 2 (12 Questões)
+            // SIMULADO 2 (12 Questões - Revisão Abrangente)
             // ==========================================
             {
                 simulado: 2,
-                text: "Em uma avaliação laboratorial, um paciente com quadro de fadiga extrema apresenta pancitopenia (redução de hemácias, leucócitos e plaquetas). A biópsia revela uma medula óssea hip
-        // Lógica da Aplicação
-        let activeQuestions = [];
-        let currentQIndex = 0;
-        let correctCount = 0;
-        let answered = false;
-
-        function startQuiz(simuladoNum) {
-            // Filtra as questões do banco pelo número do simulado escolhido
-            activeQuestions = allQuestions.filter(q => q.simulado === simuladoNum);
-            
-            if (activeQuestions.length === 0) {
-                alert(`O Simulado ${simuladoNum} ainda não possui questões. Solicite as questões e adicione ao código!`);
-                return;
-            }
-
-            document.getElementById('current-sim-num').innerText = simuladoNum;
-            document.getElementById('total-q-num').innerText = activeQuestions.length;
-            
-            document.getElementById('home-screen').classList.add('hidden');
-            document.getElementById('quiz-screen').classList.remove('hidden');
-            
-            currentQIndex = 0;
-            correctCount = 0;
-            loadQuestion();
-        }
-
-        function loadQuestion() {
-            answered = false;
-            document.getElementById('next-btn').classList.add('hidden');
-            document.getElementById('explanation-box').classList.add('hidden');
-            
-            document.getElementById('current-q-num').innerText = currentQIndex + 1;
-            
-            // Atualiza a Barra de Progresso
-            const progress = (currentQIndex / activeQuestions.length) * 100;
-            document.getElementById('progress-bar').style.width = `${progress}%`;
-            
-            const q = activeQuestions[currentQIndex];
-            document.getElementById('question-text').innerText = q.text;
-            
-            const optsContainer = document.getElementById('options-container');
-            optsContainer.innerHTML = '';
-            
-            q.options.forEach(opt => {
-                const btn = document.createElement('button');
-                btn.className = 'w-full text-left p-4 rounded-lg border-2 border-gray-200 bg-white hover:border-blue-400 hover:bg-blue-50 transition font-medium text-gray-700 shadow-sm';
-                btn.innerText = `${opt.id}) ${opt.text}`;
-                btn.onclick = () => selectAnswer(opt.id, btn);
-                optsContainer.appendChild(btn);
-            });
-        }
-
-        function selectAnswer(selectedId, btnElement) {
-            if (answered) return;
-            answered = true;
-            
-            const q = activeQuestions[currentQIndex];
-            const isCorrect = selectedId === q.answer;
-            
-            const allBtns = document.getElementById('options-container').children;
-            for (let btn of allBtns) {
-                btn.disabled = true;
-                btn.classList.remove('hover:border-blue-400', 'hover:bg-blue-50', 'shadow-sm');
-                
-                if (btn.innerText.startsWith(q.answer)) {
-                    btn.classList.remove('border-gray-200');
-                    btn.classList.add('border-green-500', 'bg-green-50', 'text-green-800');
-                } else if (btn.innerText.startsWith(selectedId) && !isCorrect) {
-                    btn.classList.remove('border-gray-200');
-                    btn.classList.add('border-red-500', 'bg-red-50', 'text-red-800');
-                } else {
-                    btn.classList.add('opacity-40');
+                text: "Durante o processo de fagocitose, após a formação do fagolisossomo, os macrófagos e neutrófilos utilizam mecanismos bioquímicos para a destruição (killing) dos microrganismos. Com base nestes mecanismos, assinale a alternativa que descreve corretamente as vias envolvidas:",
+                options: [
+                    { id: 'A', text: "A destruição ocorre exclusivamente pela ação de enzimas lisossomais, sem participação de espécies reativas." },
+                    { id: 'B', text: "A enzima Óxido Nítrico Sintase Induzida (iNOS) converte L-arginina em óxido nítrico (NO), que atua na destruição microbiana." },
+                    { id: 'C', text: "A oxidase fagocitária converte o óxido nítrico em peróxido de hidrogénio para opsonizar a bactéria." },
+                    { id: 'D', text: "Os fagócitos libertam histamina para dissolver a parede celular bacteriana no interior do fagossomo." },
+                    { id: 'E', text: "A destruição no fagolisossomo depende da ativação prévia de linfócitos T CD4+ para iniciar a fagocitose." }
+                ],
+                answer: 'B',
+                explanation: {
+                    main: "No fagolisossomo, os microrganismos são mortos por Enzimas Lisossómicas, Espécies Reativas de Oxigénio (ROS) geradas pela oxidase do fagócito, e Óxido Nítrico (NO) gerado pela iNOS a partir da L-arginina[cite: 483, 484].",
+                    A: "Incorreta. Envolve fortemente ROS e NO, não apenas enzimas lisossomais.",
+                    B: "Correta. A iNOS converte L-arginina em citrulina e NO, que é altamente tóxico para os microrganismos[cite: 483, 484].",
+                    C: "Incorreta. A oxidase fagocitária converte O2 em ânion superóxido (ROS), não atua sobre o NO[cite: 483].",
+                    D: "Incorreta. Histamina é um mediador vasoativo libertado por mastócitos e basófilos, não é usada no fagolisossomo para destruição bacteriana.",
+                    E: "Incorreta. A fagocitose e a destruição inicial são mecanismos inatos que não requerem linfócitos T[cite: 481, 482]."
+                }
+            },
+            {
+                simulado: 2,
+                text: "Uma doente de 41 anos apresenta inflamação articular decorrente de artrite reumatoide. Os exames mostram consumo sérico das proteínas C1q, C2 e C4 do sistema complemento. Este padrão indica que a inflamação é mediada por:",
+                options: [
+                    { id: 'A', text: "Ativação da via alternativa, desencadeada pelo contacto direto com PAMPs bacterianos." },
+                    { id: 'B', text: "Ativação da via clássica, desencadeada pela formação de complexos antígeno-anticorpo." },
+                    { id: 'C', text: "Ativação da via das lectinas, mediada por recetores de manose na membrana sinovial." },
+                    { id: 'D', text: "Produção excessiva de IgE mediada por mastócitos articulares." },
+                    { id: 'E', text: "Deficiência primária na produção de C3, impedindo a cascata inflamatória." }
+                ],
+                answer: 'B',
+                explanation: {
+                    main: "O consumo específico de C1q, C2 e C4 (sem consumo inicial marcado de C3/C5) é característico da Via Clássica do sistema complemento, que é ativada por imunocomplexos (antígeno-anticorpo) típicos de doenças autoimunes como a artrite reumatoide[cite: 517, 518].",
+                    A: "Incorreta. A via alternativa é ativada espontaneamente ou por superfícies microbianas (PAMPs), não consumindo C1, C2 ou C4.",
+                    B: "Correta. Complexos imunes ativam o C1q, iniciando a via clássica[cite: 517, 518].",
+                    C: "Incorreta. A via das lectinas ativa-se pela ligação a açúcares de microrganismos, não por autoanticorpos.",
+                    D: "Incorreta. Artrite reumatoide não é mediada por IgE (alergia), mas sim por IgG/IgM (Fator Reumatoide).",
+                    E: "Incorreta. O enunciado refere níveis normais de C3[cite: 515]."
+                }
+            },
+            {
+                simulado: 2,
+                text: "Um exame de fezes de um jovem com queixas de diarreia após ingestão de leite revelou crescimento de bactérias Gram-negativas no meio MacConkey, com formação de halo rosado ao redor das colónias. Estes achados laboratoriais indicam que:",
+                options: [
+                    { id: 'A', text: "A bactéria possui uma parede espessa de peptidoglicano e não fermenta lactose." },
+                    { id: 'B', text: "Trata-se de uma bactéria Gram-negativa, capaz de fermentar a lactose e produzir ácidos." },
+                    { id: 'C', text: "A bactéria é Gram-positiva e utiliza a lactose apenas para respiração aeróbia." },
+                    { id: 'D', text: "Trata-se de um fungo dimórfico disfarçado de bactéria entérica." },
+                    { id: 'E', text: "O halo rosado indica a produção de toxinas que destroem os enterócitos." }
+                ],
+                answer: 'B',
+                explanation: {
+                    main: "A coloração Gram-negativa aliada ao crescimento em meio MacConkey com halo rosado (mudança de pH) confirma tratar-se de uma enterobactéria fermentadora de lactose (como a E. coli), típica da microbiota intestinal[cite: 516].",
+                    A: "Incorreta. Gram-negativas têm camada fina de peptidoglicano; e o halo rosado prova que *fermenta* lactose[cite: 516].",
+                    B: "Correta. Crescimento no MacConkey + halo rosado = Gram-negativa fermentadora de lactose[cite: 516].",
+                    C: "Incorreta. A coloração de Gram foi negativa.",
+                    D: "Incorreta. É uma bactéria verdadeira, sem relação com fungos dimórficos.",
+                    E: "Incorreta. O halo rosado indica apenas a alteração do pH do meio devido à produção de ácidos pela fermentação[cite: 515, 516]."
+                }
+            },
+            {
+                simulado: 2,
+                text: "Um doente de 19 anos apresenta autoanticorpos antitireoidianos circulantes. O imunologista suspeita de uma falha na tolerância central (educação tímica). Que processo fisiológico falhou, permitindo a sobrevivência destes linfócitos T autorreativos?",
+                options: [
+                    { id: 'A', text: "Expansão clonal" },
+                    { id: 'B', text: "Deleção clonal" },
+                    { id: 'C', text: "Comutação de classe (Isotype switching)" },
+                    { id: 'D', text: "Opsonização" },
+                    { id: 'E', text: "Maturação da afinidade" }
+                ],
+                answer: 'B',
+                explanation: {
+                    main: "Durante a maturação no timo, os linfócitos T que reconhecem antígenos próprios com alta afinidade devem sofrer apoptose. Este processo chama-se deleção clonal (ou seleção negativa). A sua falha liberta células autorreativas[cite: 514, 517].",
+                    A: "Incorreta. Expansão clonal é a proliferação após contacto com antígeno estranho[cite: 517].",
+                    B: "Correta. A deleção clonal elimina linfócitos T que atacariam o próprio organismo[cite: 514, 517].",
+                    C: "Incorreta. Comutação de classe ocorre nos linfócitos B para mudar o tipo de anticorpo (ex: IgM para IgG).",
+                    D: "Incorreta. Opsonização é o revestimento de microrganismos por anticorpos ou complemento.",
+                    E: "Incorreta. Maturação de afinidade melhora a qualidade dos anticorpos ao longo da infeção."
+                }
+            },
+            {
+                simulado: 2,
+                text: "Durante a resolução da resposta inflamatória aguda, após a eliminação do agente agressor, os macrófagos alteram o seu perfil de secreção para promover a reparação tecidular e inibir a inflamação. Quais são as principais citocinas produzidas nesta fase?",
+                options: [
+                    { id: 'A', text: "IL-1 e TNF-alfa" },
+                    { id: 'B', text: "Histamina e Bradicinina" },
+                    { id: 'C', text: "IL-10 e TGF-beta" },
+                    { id: 'D', text: "IL-8 (CXCL8) e Proteína C Reativa" },
+                    { id: 'E', text: "Interferon-gama (IFN-g) e IL-12" }
+                ],
+                answer: 'C',
+                explanation: {
+                    main: "A IL-10 e o TGF-beta são as principais citocinas anti-inflamatórias. Após a eliminação do agressor, elas inibem a síntese de mediadores pró-inflamatórios e estimulam a reparação tecidular (fase de resolução)[cite: 510, 511].",
+                    A: "Incorreta. IL-1 e TNF-alfa são as principais citocinas *pró*-inflamatórias.",
+                    B: "Incorreta. Histamina e bradicinina iniciam a inflamação vascular.",
+                    C: "Correta. IL-10 e TGF-beta sinalizam o fim da inflamação e a reparação[cite: 510, 511].",
+                    D: "Incorreta. IL-8 é uma quimiocina que atrai neutrófilos, alimentando a inflamação[cite: 511].",
+                    E: "Incorreta. IFN-gama e IL-12 ativam macrófagos e direcionam a resposta celular agressiva[cite: 486]."
+                }
+            },
+            {
+                simulado: 2,
+                text: "Sobre a anatomia microscópica e as funções do baço, analise os componentes da sua estrutura e assinale a afirmação correta:",
+                options: [
+                    { id: 'A', text: "A polpa vermelha é rica em linfócitos T e folículos linfáticos primários." },
+                    { id: 'B', text: "O baço filtra exclusivamente a linfa antes de a devolver à circulação sanguínea." },
+                    { id: 'C', text: "A polpa branca contém arteríolas centrais envolvidas pela bainha linfática periarterial (PALS) e folículos ricos em linfócitos B." },
+                    { id: 'D', text: "A seleção negativa dos linfócitos T ocorre nos sinusóides da polpa vermelha esplénica." },
+                    { id: 'E', text: "Não possui macrófagos, delegando a função de limpeza aos gânglios linfáticos." }
+                ],
+                answer: 'C',
+                explanation: {
+                    main: "O baço está dividido em polpa branca (tecido linfoide rico em linfócitos T na PALS e linfócitos B nos folículos) e polpa vermelha (sinusóides e cordões para filtração de hemácias)[cite: 506].",
+                    A: "Incorreta. A polpa vermelha contém essencialmente hemácias e macrófagos; a branca é que tem linfócitos[cite: 506].",
+                    B: "Incorreta. O baço filtra o sangue, não a linfa (quem filtra a linfa são os gânglios linfáticos).",
+                    C: "Correta. Descreve exatamente a estrutura da polpa branca esplénica[cite: 506].",
+                    D: "Incorreta. A seleção negativa ocorre na medula do timo[cite: 503].",
+                    E: "Incorreta. A polpa vermelha possui imensos macrófagos para remover células velhas e micróbios do sangue[cite: 506]."
+                }
+            },
+            {
+                simulado: 2,
+                text: "Uma enfermeira recebeu a vacina contra o vírus Influenza. Seis meses depois, foi exposta ao vírus, apresentando um pico rápido de anticorpos IgG de alta afinidade e ausência de sintomas. Qual mecanismo imunológico justifica esta resposta acelerada?",
+                options: [
+                    { id: 'A', text: "Educação tímica de novos precursores." },
+                    { id: 'B', text: "Reativação do sistema complemento pela via das lectinas." },
+                    { id: 'C', text: "Fagocitose massiva mediada exclusivamente por macrófagos alveolares." },
+                    { id: 'D', text: "Expansão clonal rápida a partir de linfócitos de memória pré-existentes." },
+                    { id: 'E', text: "Inibição do mecanismo de ADE (amplificação dependente de anticorpos)." }
+                ],
+                answer: 'D',
+                explanation: {
+                    main: "A exposição secundária a um antígeno desencadeia a ativação de linfócitos T e B de memória gerados na primeira exposição (ou vacinação). Estes entram em rápida expansão clonal, produzindo uma resposta mais veloz, intensa e com anticorpos de alta afinidade[cite: 513, 517].",
+                    A: "Incorreta. A educação tímica ocorre para linfócitos virgens (naives), não para a resposta secundária periférica.",
+                    B: "Incorreta. A via das lectinas é inata e não possui memória.",
+                    C: "Incorreta. A rapidez e a produção de IgG dependem da imunidade adaptativa celular (linfócitos), não apenas de macrófagos.",
+                    D: "Correta. A memória imunológica baseia-se na expansão clonal de células previamente selecionadas[cite: 513, 517].",
+                    E: "Incorreta. ADE agrava infeções (ex: Dengue), não é um mecanismo de proteção vacinal[cite: 509, 510]."
+                }
+            },
+            {
+                simulado: 2,
+                text: "Com base no ciclo replicativo do HIV, um novo medicamento tem como alvo a enzima 'Transcriptase Reversa'. Qual será o efeito biológico esperado deste fármaco na célula hospedeira (Linfócito T CD4+)?",
+                options: [
+                    { id: 'A', text: "Impedir que o vírus se fixe ao recetor CD4 na membrana celular." },
+                    { id: 'B', text: "Impedir a conversão do RNA viral em DNA, interrompendo a infeção logo na fase inicial." },
+                    { id: 'C', text: "Impedir a integração do DNA viral no genoma do linfócito, bloqueando a enzima integrase." },
+                    { id: 'D', text: "Impedir a montagem das proteínas virais e a libertação de novos viriões maduros." },
+                    { id: 'E', text: "Estimular o linfócito a produzir maiores quantidades de citocinas inflamatórias." }
+                ],
+                answer: 'B',
+                explanation: {
+                    main: "A Transcriptase Reversa é a enzima responsável por transcrever o RNA do HIV em DNA viral. Se bloqueada, o vírus não consegue formar o DNA necessário para prosseguir a infeção[cite: 507, 508].",
+                    A: "Incorreta. A fixação ocorre por glicoproteínas de superfície (como gp120), antes da ação da transcriptase.",
+                    B: "Correta. Bloqueia o passo 1 (RNA -> DNA) do ciclo viral[cite: 507].",
+                    C: "Incorreta. A integração é feita pela enzima Integrase (passo 2)[cite: 507].",
+                    D: "Incorreta. A montagem e maturação dependem da Protease[cite: 507].",
+                    E: "Incorreta. O medicamento inibe o vírus, não estimula as funções imunológicas nativas."
+                }
+            },
+            {
+                simulado: 2,
+                text: "O Schistosoma mansoni é responsável por causar a Esquistossomose, patologia que pode levar à fibrose hepática e hipertensão portal. Como ocorre a transmissão habitual deste parasita para o ser humano?",
+                options: [
+                    { id: 'A', text: "Ingestão de carne bovina mal cozida contendo ovos do parasita." },
+                    { id: 'B', text: "Picada de insetos vetores infetados nas margens de rios." },
+                    { id: 'C', text: "Penetração ativa das larvas cercárias através da pele, ao entrar em contacto com água doce contaminada." },
+                    { id: 'D', text: "Inalação de esporos presentes em fezes de gatos domesticados." },
+                    { id: 'E', text: "Penetração ativa dos ovos do S. mansoni na pele humana durante o banho." }
+                ],
+                answer: 'C',
+                explanation: {
+                    main: "A infeção por S. mansoni ocorre quando a pessoa entra em água doce onde existem caracóis infetados. As larvas cercárias libertadas na água penetram ativamente a pele humana íntegra[cite: 511, 512].",
+                    A: "Incorreta. Refere-se à transmissão de Taenia spp.",
+                    B: "Incorreta. Não tem inseto vetor, o hospedeiro intermediário é um molusco de água doce.",
+                    C: "Correta. As cercárias são as formas infetantes que penetram a pele.",
+                    D: "Incorreta. Refere-se à via de transmissão do Toxoplasma gondii (oocistos)[cite: 512].",
+                    E: "Incorreta. Ovos não penetram a pele, são excretados nas fezes do hospedeiro; quem penetra é a larva cercária. (Este foi o distrator da questão 11 da prova)[cite: 512]."
+                }
+            },
+            {
+                simulado: 2,
+                text: "As células Natural Killer (NK) desempenham um papel crucial na imunidade inata. Qual das seguintes afirmações descreve corretamente o seu mecanismo de ação microbicida?",
+                options: [
+                    { id: 'A', text: "Fagocitam microrganismos de grandes dimensões utilizando recetores toll-like (TLRs) de superfície." },
+                    { id: 'B', text: "Destroem células infetadas por vírus e células tumorais através da libertação de grânulos citotóxicos, sem necessitar de sensibilização prévia." },
+                    { id: 'C', text: "Produzem anticorpos específicos (IgG) que neutralizam a entrada de vírus nas células." },
+                    { id: 'D', text: "Apresentam antígenos aos linfócitos T CD4+ nos gânglios linfáticos, ativando a resposta adaptativa." },
+                    { id: 'E', text: "São responsáveis pela produção maciça de histamina durante o choque anafilático." }
+                ],
+                answer: 'B',
+                explanation: {
+                    main: "As células NK são sentinelas inatas especializadas em induzir apoptose (morte celular programada) em células que albergam vírus ou sofreram mutação tumoral, atuando de imediato sem necessidade de reconhecimento de antígenos específicos ou MHC[cite: 466, 486].",
+                    A: "Incorreta. NKs não são células fagocíticas (essa função é de neutrófilos/macrófagos).",
+                    B: "Correta. Libertam perforinas e granzimas que destroem a célula infetada alvo[cite: 466, 486].",
+                    C: "Incorreta. Produção de anticorpos é função exclusiva de linfócitos B/plasmócitos.",
+                    D: "Incorreta. As células apresentadoras de antígeno profissionais (ex: células dendríticas, macrófagos) desempenham essa função[cite: 466].",
+                    E: "Incorreta. A histamina é libertada por mastócitos e basófilos[cite: 465]."
+                }
+            },
+            {
+                simulado: 2,
+                text: "O uso prolongado de antibióticos em lactentes pode resultar no desenvolvimento de candidose oral (placas esbranquiçadas, 'sapinhos'). Este fenómeno clínico explica-se, sob a perspetiva microbiológica e imunológica, por:",
+                options: [
+                    { id: 'A', text: "Imaturidade exclusiva dos linfócitos T maternos transmitidos pelo leite." },
+                    { id: 'B', text: "Destruição da parede de quitina do fungo pela ação cruzada dos antibióticos." },
+                    { id: 'C', text: "Supressão da microbiota bacteriana endógena normal, reduzindo a competição e permitindo o supercrescimento oportunista da Candida." },
+                    { id: 'D', text: "Ação imunossupressora direta do antibiótico sobre os macrófagos alveolares." },
+                    { id: 'E', text: "Mutação no fungo, que adquire um plasmídeo de resistência e se torna um patógeno primário obrigatório." }
+                ],
+                answer: 'C',
+                explanation: {
+                    main: "A Candida spp. faz parte da microbiota residente (em pequenas quantidades). Quando antibióticos eliminam as bactérias benéficas competidoras, os fungos encontram espaço e nutrientes livres, proliferando de forma oportunista[cite: 510, 511].",
+                    A: "Incorreta. O fator desencadeante principal referido no caso é o uso do antibiótico, não os anticorpos maternos.",
+                    B: "Incorreta. Antibióticos (antibacterianos) não atuam na quitina dos fungos.",
+                    C: "Correta. A alteração ecológica da microbiota permite o sobrecrescimento fúngico[cite: 510, 511].",
+                    D: "Incorreta. Antibióticos comuns afetam bactérias, não deprimem as células imunes humanas diretamente.",
+                    E: "Incorreta. O fungo não sofreu mutação, apenas proliferou por ausência de competição[cite: 511]."
+                }
+            },
+            {
+                simulado: 2,
+                text: "Relativamente aos recetores do sistema imunitário inato e ao seu mecanismo de funcionamento, assinale a opção correta:",
+                options: [
+                    { id: 'A', text: "Possuem alta especificidade, distinguindo milhares de proteínas individuais devido à recombinação somática de genes." },
+                    { id: 'B', text: "Reconhecem padrões moleculares conservados (PAMPs), estão codificados na linhagem germinativa e são idênticos em todas as células da mesma linhagem." },
+                    { id: 'C', text: "São ativados apenas após o processamento e apresentação do antígeno pelas moléculas de MHC I." },
+                    { id: 'D', text: "Produzem memória imunológica duradoura, respondendo de forma mais intensa a cada nova exposição." },
+                    { id: 'E', text: "Atacam frequentemente células saudáveis do hospedeiro, pois não conseguem distinguir o que é próprio do que é estranho (self/nonself)." }
+                ],
+                answer: 'B',
+                explanation: {
+                    main: "Os recetores da imunidade inata (como os Toll-like Receptors - TLRs) reconhecem Padrões Moleculares Associados a Patógenos (PAMPs). São inespecíficos para antígenos individuais, mas altamente eficazes contra estruturas partilhadas por grupos de micróbios. Não sofrem recombinação genética (são codificados na linha germinativa)[cite: 468, 488].",
+                    A: "Incorreta. Alta especificidade e recombinação descrevem recetores T e B (imunidade adaptativa)[cite: 488].",
+                    B: "Correta. Descreve exatamente a natureza dos PRRs (Receptores de Reconhecimento de Padrões)[cite: 468, 488].",
+                    C: "Incorreta. Eles ligam-se diretamente aos micróbios (ex: LPS da parede bacteriana), sem necessidade de MHC[cite: 469].",
+                    D: "Incorreta. O sistema inato carece de memória imunológica clássica[cite: 467, 488].",
+                    E: "Incorreta. O sistema inato discrimina excelentemente o self do nonself, não reagindo contra o hospedeiro saudável[cite: 468]."
                 }
             }
-
-            if (isCorrect) correctCount++;
-            document.getElementById('score-display').innerText = `Acertos: ${correctCount}`;
-
-            const expBox = document.getElementById('explanation-box');
-            expBox.classList.remove('hidden');
-            expBox.innerHTML = `
-                <div class="font-bold text-base mb-2 p-2 rounded ${isCorrect ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}">
-                    Sua resposta: ${selectedId} — ${isCorrect ? 'Correta!' : 'Incorreta.'}
-                </div>
-                <p class="font-bold text-gray-800 mb-2">Alternativa Correta: ${q.answer}</p>
-                <p class="text-gray-800 mb-3"><span class="font-semibold text-blue-800">Por que a correta está certa:</span> ${q.explanation.main}</p>
-                <hr class="border-gray-300 my-2">
-                <p class="font-semibold text-gray-700 mt-2">Análise das alternativas:</p>
-                <ul class="space-y-2 mt-2 ml-1 text-xs sm:text-sm">
-                    <li><strong class="text-gray-900">A:</strong> ${q.explanation.A}</li>
-                    <li><strong class="text-gray-900">B:</strong> ${q.explanation.B}</li>
-                    <li><strong class="text-gray-900">C:</strong> ${q.explanation.C}</li>
-                    <li><strong class="text-gray-900">D:</strong> ${q.explanation.D}</li>
-                    <li><strong class="text-gray-900">E:</strong> ${q.explanation.E}</li>
-                </ul>
-            `;
-
-            document.getElementById('next-btn').classList.remove('hidden');
-            
-            setTimeout(() => {
-                document.getElementById('next-btn').scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }, 100);
-        }
-
-        function nextQuestion() {
-            currentQIndex++;
-            if (currentQIndex < activeQuestions.length) {
-                loadQuestion();
-            } else {
-                showResults();
-            }
-        }
-
-        function showResults() {
-            document.getElementById('quiz-screen').classList.add('hidden');
-            document.getElementById('result-screen').classList.remove('hidden');
-            document.getElementById('final-correct').innerText = correctCount;
-            document.getElementById('final-total').innerText = activeQuestions.length;
-            
-            const score = ((correctCount / activeQuestions.length) * 10).toFixed(1);
-            const scoreSpan = document.getElementById('final-score');
-            scoreSpan.innerText = score;
-            
-            if (score >= 7) {
-                scoreSpan.className = "text-green-600";
-            } else if (score >= 5) {
-                scoreSpan.className = "text-yellow-600";
-            } else {
-                scoreSpan.className = "text-red-600";
-            }
-        }
-    </script>
-</body>
-</html>
+        ];
+        
         // Lógica da Aplicação
         let activeQuestions = [];
         let currentQIndex = 0;
