@@ -327,13 +327,147 @@
             // ESPAÇO PARA OS PRÓXIMOS SIMULADOS
             // (Cole as questões dos Simulados 2, 3, 4 e 5 aqui debaixo, seguindo o padrão!)
             // ==========================================
-        ];
+        ]
 // ==========================================
             // SIMULADO 2 (12 Questões)
             // ==========================================
             {
                 simulado: 2,
                 text: "Em uma avaliação laboratorial, um paciente com quadro de fadiga extrema apresenta pancitopenia (redução de hemácias, leucócitos e plaquetas). A biópsia revela uma medula óssea hip
+        // Lógica da Aplicação
+        let activeQuestions = [];
+        let currentQIndex = 0;
+        let correctCount = 0;
+        let answered = false;
+
+        function startQuiz(simuladoNum) {
+            // Filtra as questões do banco pelo número do simulado escolhido
+            activeQuestions = allQuestions.filter(q => q.simulado === simuladoNum);
+            
+            if (activeQuestions.length === 0) {
+                alert(`O Simulado ${simuladoNum} ainda não possui questões. Solicite as questões e adicione ao código!`);
+                return;
+            }
+
+            document.getElementById('current-sim-num').innerText = simuladoNum;
+            document.getElementById('total-q-num').innerText = activeQuestions.length;
+            
+            document.getElementById('home-screen').classList.add('hidden');
+            document.getElementById('quiz-screen').classList.remove('hidden');
+            
+            currentQIndex = 0;
+            correctCount = 0;
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            answered = false;
+            document.getElementById('next-btn').classList.add('hidden');
+            document.getElementById('explanation-box').classList.add('hidden');
+            
+            document.getElementById('current-q-num').innerText = currentQIndex + 1;
+            
+            // Atualiza a Barra de Progresso
+            const progress = (currentQIndex / activeQuestions.length) * 100;
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+            
+            const q = activeQuestions[currentQIndex];
+            document.getElementById('question-text').innerText = q.text;
+            
+            const optsContainer = document.getElementById('options-container');
+            optsContainer.innerHTML = '';
+            
+            q.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'w-full text-left p-4 rounded-lg border-2 border-gray-200 bg-white hover:border-blue-400 hover:bg-blue-50 transition font-medium text-gray-700 shadow-sm';
+                btn.innerText = `${opt.id}) ${opt.text}`;
+                btn.onclick = () => selectAnswer(opt.id, btn);
+                optsContainer.appendChild(btn);
+            });
+        }
+
+        function selectAnswer(selectedId, btnElement) {
+            if (answered) return;
+            answered = true;
+            
+            const q = activeQuestions[currentQIndex];
+            const isCorrect = selectedId === q.answer;
+            
+            const allBtns = document.getElementById('options-container').children;
+            for (let btn of allBtns) {
+                btn.disabled = true;
+                btn.classList.remove('hover:border-blue-400', 'hover:bg-blue-50', 'shadow-sm');
+                
+                if (btn.innerText.startsWith(q.answer)) {
+                    btn.classList.remove('border-gray-200');
+                    btn.classList.add('border-green-500', 'bg-green-50', 'text-green-800');
+                } else if (btn.innerText.startsWith(selectedId) && !isCorrect) {
+                    btn.classList.remove('border-gray-200');
+                    btn.classList.add('border-red-500', 'bg-red-50', 'text-red-800');
+                } else {
+                    btn.classList.add('opacity-40');
+                }
+            }
+
+            if (isCorrect) correctCount++;
+            document.getElementById('score-display').innerText = `Acertos: ${correctCount}`;
+
+            const expBox = document.getElementById('explanation-box');
+            expBox.classList.remove('hidden');
+            expBox.innerHTML = `
+                <div class="font-bold text-base mb-2 p-2 rounded ${isCorrect ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}">
+                    Sua resposta: ${selectedId} — ${isCorrect ? 'Correta!' : 'Incorreta.'}
+                </div>
+                <p class="font-bold text-gray-800 mb-2">Alternativa Correta: ${q.answer}</p>
+                <p class="text-gray-800 mb-3"><span class="font-semibold text-blue-800">Por que a correta está certa:</span> ${q.explanation.main}</p>
+                <hr class="border-gray-300 my-2">
+                <p class="font-semibold text-gray-700 mt-2">Análise das alternativas:</p>
+                <ul class="space-y-2 mt-2 ml-1 text-xs sm:text-sm">
+                    <li><strong class="text-gray-900">A:</strong> ${q.explanation.A}</li>
+                    <li><strong class="text-gray-900">B:</strong> ${q.explanation.B}</li>
+                    <li><strong class="text-gray-900">C:</strong> ${q.explanation.C}</li>
+                    <li><strong class="text-gray-900">D:</strong> ${q.explanation.D}</li>
+                    <li><strong class="text-gray-900">E:</strong> ${q.explanation.E}</li>
+                </ul>
+            `;
+
+            document.getElementById('next-btn').classList.remove('hidden');
+            
+            setTimeout(() => {
+                document.getElementById('next-btn').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+        }
+
+        function nextQuestion() {
+            currentQIndex++;
+            if (currentQIndex < activeQuestions.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-screen').classList.add('hidden');
+            document.getElementById('result-screen').classList.remove('hidden');
+            document.getElementById('final-correct').innerText = correctCount;
+            document.getElementById('final-total').innerText = activeQuestions.length;
+            
+            const score = ((correctCount / activeQuestions.length) * 10).toFixed(1);
+            const scoreSpan = document.getElementById('final-score');
+            scoreSpan.innerText = score;
+            
+            if (score >= 7) {
+                scoreSpan.className = "text-green-600";
+            } else if (score >= 5) {
+                scoreSpan.className = "text-yellow-600";
+            } else {
+                scoreSpan.className = "text-red-600";
+            }
+        }
+    </script>
+</body>
+</html>
         // Lógica da Aplicação
         let activeQuestions = [];
         let currentQIndex = 0;
